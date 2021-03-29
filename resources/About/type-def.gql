@@ -1,0 +1,15 @@
+type Dependency {
+  name: String,
+  version: String
+}
+
+type About {
+  name: String,
+  version: String,
+  description: String,
+  dependencies: [Dependency]
+}
+
+type Query {
+  about: About
+}

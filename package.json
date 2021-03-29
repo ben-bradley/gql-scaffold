@@ -1,0 +1,20 @@
+{
+  "name": "tiny-gql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource": "^0.8.0",
+    "apollo-server": "^2.22.1",
+    "apollo-server-caching": "^0.6.0",
+    "dataloader": "^2.0.0",
+    "graphql": "^15.5.0",
+    "require-gql": "^1.0.0"
+  }
+}
