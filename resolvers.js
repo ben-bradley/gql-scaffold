@@ -1,10 +1,6 @@
-const { AboutQueries, About} = require("./resources/About/resolvers");
+const { AboutQueries, AboutMutations, About} = require("./resources/About/resolvers");
 
-const {
-  BookQueries,
-  BookMutations,
-  Book
-} = require("./resources/Book/resolvers")
+const { BookQueries, BookMutations, Book } = require("./resources/Book/resolvers");
 
 const resolvers = {
   About,
@@ -14,6 +10,7 @@ const resolvers = {
     ...BookQueries
   },
   Mutation: {
+    ...AboutMutations,
     ...BookMutations
   }
 };

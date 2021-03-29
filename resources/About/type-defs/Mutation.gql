@@ -1,0 +1,7 @@
+type EchoResponse {
+  response: String
+}
+
+extend type Mutation {
+  echo(input: String): EchoResponse
+}
