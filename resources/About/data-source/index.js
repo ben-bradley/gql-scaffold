@@ -1,7 +1,7 @@
 const { DataSource } = require("apollo-datasource");
 const { InMemoryLRUCache } = require("apollo-server-caching");
 
-const pkg = require("../../package");
+const pkg = require("../../../package");
 
 class AboutDataSource extends DataSource {
   constructor () {
@@ -28,21 +28,11 @@ class AboutDataSource extends DataSource {
       return JSON.parse(cacheDoc);
     }
 
-    const names = Object.keys(pkg.dependencies);
-
-    const about = {
-      ...pkg,
-      dependencies: names.map((name) => ({
-        name,
-        version: pkg.dependencies[name]
-      }))
-    };
-
     if (ttlInSeconds) {
-      this.cache.set(cacheKey, JSON.stringify(about), { ttl: ttlInSeconds });
+      this.cache.set(cacheKey, JSON.stringify(pkg), { ttl: ttlInSeconds });
     }
 
-    return about;
+    return pkg;
   }
 }
 

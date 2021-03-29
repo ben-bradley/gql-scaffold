@@ -9,7 +9,3 @@ type About {
   description: String,
   dependencies: [Dependency]
 }
-
-type Query {
-  about: About
-}

@@ -1,9 +1,7 @@
-const { requireGql } = require("require-gql");
-
-const AboutTypeDefs = requireGql("./resources/About/type-def.gql");
-const BookTypeDefs = requireGql("./resources/Book/type-def.gql");
+const AboutTypeDefs = require("./resources/About/type-defs");
+const BookTypeDefs = require("./resources/Book/type-defs");
 
 module.exports = [
-  AboutTypeDefs,
-  BookTypeDefs
+  ...AboutTypeDefs,
+  ...BookTypeDefs
 ];

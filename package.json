@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./index.js",
+    "debug": "nodemon --inspect-brk ./index.js",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +18,9 @@
     "dataloader": "^2.0.0",
     "graphql": "^15.5.0",
     "require-gql": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
   }
 }
