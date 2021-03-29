@@ -1,4 +1,4 @@
-# Tiny GQL
+# GQL Scaffold
 
 This code aims to be a relatively balanced full-featured, but still bare-bones scaffolding for setting up an Apollo GQL server.
 
