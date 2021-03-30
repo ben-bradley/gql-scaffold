@@ -1,5 +1,4 @@
 const { DataSource } = require("apollo-datasource");
-const { InMemoryLRUCache } = require("apollo-server-caching");
 
 const pkg = require("../../../package");
 
@@ -8,30 +7,11 @@ class AboutDataSource extends DataSource {
     super()
   }
 
-  initialize ({ context, cache } = {}) {
+  initialize ({ context } = {}) {
     this.context = context;
-    this.cache = cache || new InMemoryLRUCache();
   }
 
-  didEncounterError (error) {
-    throw error;
-  }
-
-  cacheKey (id) {
-    return `about-${id}`;
-  }
-
-  async get (id, { ttlInSeconds } = {}) {
-    const cacheKey = this.cacheKey(id);
-    const cacheDoc = await this.cache.get(cacheKey);
-    if (cacheDoc) {
-      return JSON.parse(cacheDoc);
-    }
-
-    if (ttlInSeconds) {
-      this.cache.set(cacheKey, JSON.stringify(pkg), { ttl: ttlInSeconds });
-    }
-
+  async get () {
     return pkg;
   }
 }

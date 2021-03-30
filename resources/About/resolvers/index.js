@@ -1,9 +1,11 @@
-const AboutQueries = require("./Query");
-const AboutMutations = require("./Mutation");
 const About = require("./About");
+const AboutMutations = require("./Mutation");
+const AboutQueries = require("./Query");
+const EchoResponse = require("./EchoResponse");
 
 module.exports = {
-  AboutQueries,
+  About,
   AboutMutations,
-  About
+  AboutQueries,
+  EchoResponse
 };
