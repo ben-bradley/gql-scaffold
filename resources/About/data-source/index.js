@@ -16,4 +16,6 @@ class AboutDataSource extends DataSource {
   }
 }
 
-module.exports = AboutDataSource;
+module.exports = {
+  AboutDataSource
+};

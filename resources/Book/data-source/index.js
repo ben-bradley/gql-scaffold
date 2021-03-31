@@ -63,4 +63,6 @@ class BookDataSource extends DataSource {
   }
 }
 
-module.exports = BookDataSource;
+module.exports = {
+  BookDataSource
+};
