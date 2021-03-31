@@ -1,9 +1,9 @@
-const { AboutDataSource } = require("./resources/About/data-source");
+const { About } = require("./resources/About/data-source");
 const { BookDataSource } = require("./resources/Book/data-source");
 const { UserDataSource } = require("./resources/User/data-source");
 
 const dataSources = () => ({
-  about: new AboutDataSource(),
+  about: new About(),
   books: new BookDataSource(),
   users: new UserDataSource()
 });
