@@ -1,7 +1,7 @@
 const { verify } = require('jsonwebtoken');
 const config = require('config');
 
-const contextFn = ({ req }) => {
+const context = ({ req }) => {
   const { headers } = req;
 
   const accessToken = headers['x-access-token'];
@@ -20,4 +20,4 @@ const contextFn = ({ req }) => {
   };
 };
 
-module.exports = contextFn;
+module.exports = context;
