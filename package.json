@@ -17,6 +17,7 @@
     "apollo-server-caching": "^0.6.0",
     "dataloader": "^2.0.0",
     "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
     "require-gql": "^2.0.0"
   },
   "devDependencies": {
