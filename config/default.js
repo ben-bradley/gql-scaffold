@@ -1,5 +1,14 @@
 module.exports = {
-  timestamp: () => Date.now(),
-  "ACCESS_TOKEN_SECRET": "MYSUPERSECRETACCESSTOKENKEY",
-  "REFRESH_TOKEN_SECRET": "MYSUPERSECRETREFRESHTOKENKEY"
+  accessToken: {
+    secret: "MYSUPERSECRETACCESSTOKENKEY",
+    options: {
+      expiresIn: "15m"
+    }
+  },
+  refreshToken: {
+    secret: "MYSUPERSECRETREFRESHTOKENKEY",
+    options: {
+      expiresIn: "7d"
+    }
+  }
 }

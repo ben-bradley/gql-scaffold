@@ -5,9 +5,14 @@ const contextFn = ({ req }) => {
   const { headers } = req;
 
   const accessToken = headers['x-access-token'];
-  const refreshToken = headers['x-refresh-token'];
 
-  const user = (accessToken) ? verify(accessToken, config.ACCESS_TOKEN_SECRET) : null;
+  const user = (accessToken) ? verify(accessToken, config.accessToken.secret) : null;
+
+  const nowInSeconds = Date.now() / 1000;
+
+  if (user && user.exp < nowInSeconds) {
+    throw new Error('Expired access token!');
+  }
 
   return {
     config,
