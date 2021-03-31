@@ -8,7 +8,7 @@ class UserDataSource extends DataSource {
     this.db = db;
   }
 
-  initialize ({ context, cache } = {}) {
+  initialize ({ context } = {}) {
     this.context = context;
   }
 
@@ -21,25 +21,6 @@ class UserDataSource extends DataSource {
 
     return doc;
   }
-
-  // async create (User) {
-  //   this.db.set(User.id, User);
-  //
-  //   return User;
-  // }
-  //
-  // async update (id, update) {
-  //   const User = this.db.get(id);
-  //
-  //   const updatedUser = {
-  //     ...User,
-  //     ...update
-  //   };
-  //
-  //   this.db.set(id, updatedUser);
-  //
-  //   return updatedUser;
-  // }
 }
 
 module.exports = { UserDataSource };

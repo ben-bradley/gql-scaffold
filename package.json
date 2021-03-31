@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js",
-    "debug": "nodemon --inspect-brk ./index.js",
+    "start": "nodemon -e js,json,gql ./index.js",
+    "debug": "nodemon -e js,json,gql --inspect-brk ./index.js",
     "test": "jest --coverage"
   },
   "keywords": [],
