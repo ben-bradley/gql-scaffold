@@ -1,9 +1,6 @@
 const { verify } = require('jsonwebtoken');
-const config = require('config');
 
-const context = ({ req }) => {
-  const { headers } = req;
-
+const getToken = (headers, config) => {
   const accessToken = headers['x-access-token'];
 
   const token = (accessToken) ? verify(accessToken, config.accessToken.secret) : null;
@@ -14,10 +11,7 @@ const context = ({ req }) => {
     throw new Error('Expired access token!');
   }
 
-  return {
-    config,
-    token
-  };
+  return token
 };
 
-module.exports = context;
+module.exports = getToken;
