@@ -1,43 +1,43 @@
-const { sign } = require('jsonwebtoken');
+const { sign } = require("jsonwebtoken");
 
-const generateTokens = require('./generateTokens');
+const generateTokens = require("./generateTokens");
 
-jest.mock('jsonwebtoken');
+jest.mock("jsonwebtoken");
 
-describe('the generateTokens util', () => {
-  it('should export a function', () => expect(typeof generateTokens).toBe('function'));
+describe("the generateTokens util", () => {
+  it("should export a function", () => expect(typeof generateTokens).toBe("function"));
 
-  it('should return an object with accessToken & refreshToken properties', () => {
+  it("should return an object with accessToken & refreshToken properties", () => {
     const user = {
-      username: 'user.username',
-      roles: ['ADMIN']
+      username: "user.username",
+      roles: [ "ADMIN" ]
     };
     const config = {
       accessToken: {
-        secret: 'config.accessToken.secret',
-        options: 'config.accessToken.options'
+        secret: "config.accessToken.secret",
+        options: "config.accessToken.options"
       },
       refreshToken: {
-        secret: 'config.refreshToken.secret',
-        options: 'config.refreshToken.options'
+        secret: "config.refreshToken.secret",
+        options: "config.refreshToken.options"
       }
     };
 
-    sign.mockReturnValue('A JWT');
+    sign.mockReturnValue("A JWT");
 
     const result = generateTokens(user, config);
 
-    expect(result).toHaveProperty('accessToken', 'A JWT');
-    expect(result).toHaveProperty('refreshToken', 'A JWT');
+    expect(result).toHaveProperty("accessToken", "A JWT");
+    expect(result).toHaveProperty("refreshToken", "A JWT");
     expect(sign).toHaveBeenCalledWith(
-      { username: 'user.username', roles: ['ADMIN'] },
-      'config.accessToken.secret',
-      'config.accessToken.options'
+      { username: "user.username", roles: [ "ADMIN" ] },
+      "config.accessToken.secret",
+      "config.accessToken.options"
     );
     expect(sign).toHaveBeenCalledWith(
-      { username: 'user.username' },
-      'config.refreshToken.secret',
-      'config.refreshToken.options'
+      { username: "user.username" },
+      "config.refreshToken.secret",
+      "config.refreshToken.options"
     );
   });
 });

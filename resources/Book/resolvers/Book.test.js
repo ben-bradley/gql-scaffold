@@ -2,7 +2,7 @@ const Book = require("./Book");
 
 describe("The Book resolver", () => {
   it("should export an object", () => {
-    expect(Object.keys(Book)).toEqual(["title", "author"]);
+    expect(Object.keys(Book)).toEqual([ "title", "author" ]);
   });
 
   describe("the book title resolver", () => {

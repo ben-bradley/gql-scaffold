@@ -1,4 +1,4 @@
-const UserDataSource = require('./User');
+const UserDataSource = require("./User");
 
 module.exports = {
   UserDataSource

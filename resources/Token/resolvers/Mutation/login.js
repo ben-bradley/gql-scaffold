@@ -1,10 +1,10 @@
-const generateTokens = require('./utils/generateTokens');
+const generateTokens = require("./utils/generateTokens");
 
 const login = async (parent, args, context) => {
   const { dataSources, config, logger } = context;
   const { username, password } = args;
 
-  logger('info', `attempting login for ${username}`);
+  logger("info", `attempting login for ${username}`);
   const user = await dataSources.users.get(username);
 
   if (!user)
@@ -13,7 +13,7 @@ const login = async (parent, args, context) => {
   if (password !== user.password)
     return null;
 
-  logger('debug', `login successful for ${username}`);
+  logger("debug", `login successful for ${username}`);
 
   return generateTokens(user, config);
 }

@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const { ApolloServer } = require('apollo-server');
-const apolloOptions = require('./options');
+const { ApolloServer } = require("apollo-server");
+const apolloOptions = require("./options");
 
 const server = new ApolloServer(apolloOptions);
 

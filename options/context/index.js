@@ -1,6 +1,6 @@
-const config = require('config');
-const getToken = require('./get-token');
-const setupLogger = require('./logger');
+const config = require("config");
+const getToken = require("./get-token");
+const setupLogger = require("./logger");
 
 const context = ({ req }) => {
   const { headers } = req;

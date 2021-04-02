@@ -1,13 +1,13 @@
-const uuid = require('uuid');
-const chalk = require('chalk');
+const uuid = require("uuid");
+const chalk = require("chalk");
 
 const chalkLevel = (level) => {
   const levels = {
-    debug: 'white',
-    error: 'red',
-    warn: 'yellow',
-    info: 'blue',
-    default: 'reset'
+    debug: "white",
+    error: "red",
+    warn: "yellow",
+    info: "blue",
+    default: "reset"
   };
 
   return levels[level] || levels.default;
@@ -23,9 +23,10 @@ const setupLogger = () => {
       `[${chalk.green(timestamp)}]`,
       chalk.yellow(traceId),
       chalk[chalkLevel(level)](level),
-      (typeof message === 'object') ? JSON.stringify(message) : message 
-    ].join('|');
+      (typeof message === "object") ? JSON.stringify(message) : message
+    ].join("|");
 
+    // eslint-disable-next-line no-console
     console.log(payload);
   };
 

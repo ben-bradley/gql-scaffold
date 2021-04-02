@@ -1,4 +1,4 @@
-const { sign } = require('jsonwebtoken');
+const { sign } = require("jsonwebtoken");
 
 const generateTokens = (user, config) => {
   const { username, roles } = user;

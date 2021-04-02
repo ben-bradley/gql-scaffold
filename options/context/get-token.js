@@ -1,14 +1,14 @@
-const { verify } = require('jsonwebtoken');
+const { verify } = require("jsonwebtoken");
 
 const getToken = (headers, config) => {
-  const accessToken = headers['x-access-token'];
+  const accessToken = headers["x-access-token"];
 
   const token = (accessToken) ? verify(accessToken, config.accessToken.secret) : null;
 
   const nowInSeconds = Date.now() / 1000;
 
   if (token && token.exp < nowInSeconds) {
-    throw new Error('Expired access token!');
+    throw new Error("Expired access token!");
   }
 
   return token

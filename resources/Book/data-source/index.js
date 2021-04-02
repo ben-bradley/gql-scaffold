@@ -1,4 +1,4 @@
-const BookDataSource = require('./Book');
+const BookDataSource = require("./Book");
 
 module.exports = {
   BookDataSource
