@@ -1,17 +1,20 @@
 const config = require("config");
 const getToken = require("./get-token");
+const getUser = require("./get-user");
 const setupLogger = require("./logger");
 
-const context = ({ req }) => {
+const context = async ({ req }) => {
   const { headers } = req;
 
   const token = getToken(headers, config);
+  const user = (token) ? await getUser(token) : null;
   const logger = setupLogger();
 
   return {
     config,
     logger,
-    token
+    token,
+    user
   };
 };
 

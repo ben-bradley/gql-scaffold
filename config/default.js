@@ -2,7 +2,7 @@ module.exports = {
   accessToken: {
     secret: "MYSUPERSECRETACCESSTOKENKEY",
     options: {
-      expiresIn: "15m"
+      expiresIn: "1d"
     }
   },
   refreshToken: {
