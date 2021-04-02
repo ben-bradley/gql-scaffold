@@ -1,10 +1,10 @@
 const { sign } = require('jsonwebtoken');
 
 const generateTokens = (user, config) => {
-  const { username } = user;
+  const { username, roles } = user;
 
   const accessToken = sign(
-    { username },
+    { username, roles },
     config.accessToken.secret,
     config.accessToken.options
   );

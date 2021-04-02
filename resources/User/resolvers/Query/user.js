@@ -1,8 +1,5 @@
 const user = async (parent, args, context) => {
-  const { dataSources, token } = context;
-
-  if (!token || token.username !== args.username)
-    throw new Error('Unauthorized!');
+  const { dataSources } = context;
 
   return dataSources.users.get(args.username);
 }

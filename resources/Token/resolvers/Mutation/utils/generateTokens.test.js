@@ -9,7 +9,8 @@ describe('the generateTokens util', () => {
 
   it('should return an object with accessToken & refreshToken properties', () => {
     const user = {
-      username: 'user.username'
+      username: 'user.username',
+      roles: ['ADMIN']
     };
     const config = {
       accessToken: {
@@ -29,7 +30,7 @@ describe('the generateTokens util', () => {
     expect(result).toHaveProperty('accessToken', 'A JWT');
     expect(result).toHaveProperty('refreshToken', 'A JWT');
     expect(sign).toHaveBeenCalledWith(
-      { username: 'user.username' },
+      { username: 'user.username', roles: ['ADMIN'] },
       'config.accessToken.secret',
       'config.accessToken.options'
     );

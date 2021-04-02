@@ -9,6 +9,7 @@ const login = async (parent, args, context) => {
 
   if (!user)
     return null;
+  // TODO: this should be bcrypted
   if (password !== user.password)
     return null;
 
