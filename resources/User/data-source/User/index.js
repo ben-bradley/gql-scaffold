@@ -23,4 +23,4 @@ class UserDataSource extends DataSource {
   }
 }
 
-module.exports = { UserDataSource };
+module.exports = UserDataSource;
