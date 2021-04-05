@@ -3,5 +3,7 @@ const Token = require("./Token");
 
 module.exports = {
   TokenMutations,
-  Token
+  TokenResolvers: {
+    Token
+  }
 };

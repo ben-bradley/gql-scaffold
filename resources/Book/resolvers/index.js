@@ -5,5 +5,7 @@ const Book = require("./Book");
 module.exports = {
   BookQueries,
   BookMutations,
-  Book
+  BookResolvers: {
+    Book
+  }
 };

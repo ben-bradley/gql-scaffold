@@ -4,8 +4,10 @@ const AboutQueries = require("./Query");
 const EchoResponse = require("./EchoResponse");
 
 module.exports = {
-  About,
   AboutMutations,
   AboutQueries,
-  EchoResponse
+  AboutResolvers: {
+    About,
+    EchoResponse
+  }
 };
