@@ -3,7 +3,7 @@ const { verify } = require("jsonwebtoken");
 const getToken = (headers, config) => {
   const accessToken = headers["x-access-token"];
 
-  const token = (accessToken) ? verify(accessToken, config.accessToken.secret) : null;
+  const token = (accessToken) ? verify(accessToken, config.auth.accessToken.secret) : null;
 
   const nowInSeconds = Date.now() / 1000;
 

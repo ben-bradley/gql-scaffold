@@ -13,8 +13,10 @@ describe("the context function", () => {
         "x-access-token": "USER_PROVIDED_JWT"
       };
       const config = {
-        accessToken: {
-          secret: "foobar"
+        auth: {
+          accessToken: {
+            secret: "foobar"
+          }
         }
       };
 
@@ -34,8 +36,10 @@ describe("the context function", () => {
     it("should return a null value for the token", () => {
       const headers = {};
       const config = {
-        accessToken: {
-          secret: "foobar"
+        auth: {
+          accessToken: {
+            secret: "foobar"
+          }
         }
       };
 
@@ -51,8 +55,10 @@ describe("the context function", () => {
         "x-access-token": "USER_PROVIDED_JWT"
       };
       const config = {
-        accessToken: {
-          secret: "foobar"
+        auth: {
+          accessToken: {
+            secret: "foobar"
+          }
         }
       };
 

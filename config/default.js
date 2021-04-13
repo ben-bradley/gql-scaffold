@@ -1,14 +1,19 @@
 module.exports = {
-  accessToken: {
-    secret: "MYSUPERSECRETACCESSTOKENKEY",
-    options: {
-      expiresIn: "1d"
-    }
+  server: {
+    port: 4000
   },
-  refreshToken: {
-    secret: "MYSUPERSECRETREFRESHTOKENKEY",
-    options: {
-      expiresIn: "7d"
+  auth: {
+    accessToken: {
+      secret: "MYSUPERSECRETACCESSTOKENKEY",
+      options: {
+        expiresIn: "1d"
+      }
+    },
+    refreshToken: {
+      secret: "MYSUPERSECRETREFRESHTOKENKEY",
+      options: {
+        expiresIn: "7d"
+      }
     }
   }
 }
