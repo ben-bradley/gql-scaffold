@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon -e js,json,gql ./index.js",
     "debug": "nodemon -e js,json,gql --inspect-brk ./index.js",
-    "test": "jest --coverage --testPathIgnorePatterns=config/*"
+    "test": "jest --coverage --testPathIgnorePatterns=config/*",
+    "prepush": "npm test"
   },
   "keywords": [],
   "author": "",
