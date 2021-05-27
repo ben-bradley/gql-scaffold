@@ -17,7 +17,7 @@ class UserDataSource extends DataSource {
   }
 
   async get (username) {
-    const doc = this.db.get(username);
+    const doc = await this.db.get(username);
 
     return doc;
   }

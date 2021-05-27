@@ -1,18 +1,18 @@
 const { sign } = require("jsonwebtoken");
 
-const generateTokens = (user, config) => {
+const generateTokens = (user, auth) => {
   const { username, roles } = user;
 
   const accessToken = sign(
     { username, roles },
-    config.accessToken.secret,
-    config.accessToken.options
+    auth.accessToken.secret,
+    auth.accessToken.options
   );
 
   const refreshToken = sign(
     { username },
-    config.refreshToken.secret,
-    config.refreshToken.options
+    auth.refreshToken.secret,
+    auth.refreshToken.options
   );
 
   return {

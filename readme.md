@@ -4,6 +4,8 @@ This code aims to be a relatively balanced full-featured, but still bare-bones s
 
 ## Features
 
+- JWT auth built-in
+- Example logging framework
 - Opinionated folder structure
 - Separation of GQL components
 - Alignment with Apollo function signatures

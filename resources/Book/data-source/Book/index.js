@@ -30,7 +30,7 @@ class BookDataSource extends DataSource {
       return JSON.parse(cacheDoc);
     }
 
-    const doc = this.db.get(id);
+    const doc = await this.db.get(id);
 
     if (ttlInSeconds) {
       this.cache.set(cacheKey, JSON.stringify(doc), { ttl: ttlInSeconds });

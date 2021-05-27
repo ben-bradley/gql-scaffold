@@ -15,7 +15,7 @@ const login = async (parent, args, context) => {
 
   logger("debug", `login successful for ${username}`);
 
-  return generateTokens(user, config);
+  return generateTokens(user, config.auth);
 }
 
 module.exports = login;
