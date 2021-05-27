@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -e js,json,gql ./index.js",
     "debug": "nodemon -e js,json,gql --inspect-brk ./index.js",
-    "test": "jest --coverage --testPathIgnorePatterns=config/*",
-    "prepush": "npm test"
+    "prepush": "npm test",
+    "setup": "cp -R .hooks/* .git/hooks; npm i",
+    "start": "nodemon -e js,json,gql ./index.js",
+    "test": "jest --coverage --testPathIgnorePatterns=config/*"
   },
   "keywords": [],
   "author": "",

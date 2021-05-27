@@ -1,0 +1,13 @@
+#!/bin/bash
+
+CMD="npm run prepush"
+
+$CMD
+RESULT=$?
+
+if [ $RESULT -ne 0 ]; then
+        echo "failed $CMD"
+        exit $RESULT
+fi
+
+exit 0
