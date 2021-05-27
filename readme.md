@@ -12,6 +12,13 @@ This code aims to be a relatively balanced full-featured, but still bare-bones s
 - Able to write `.gql` files for type defs
 - Built-in testing
 
+## Stup
+
+After cloning the repo, you'll need to run `npm runs setup`. This command does a number of things:
+1. Copy the `.hooks/*` into `.git/hooks` to enable pre-push, pre-commit, and other `git` hooks
+2. Runs `nvm install` to ensure that the proper version of Node.js is installed
+3. Runs `npm i` to install all the dependencies
+
 ## Folder Structure
 
 The folder structure is derived from the function signature for `ApolloServer()`.
